@@ -1,0 +1,140 @@
+/* Background wrapper for the entire game */
+.game-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Game title styling */
+  .game-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #2c3e50;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .game-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: #3498db;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  /* Status text styling */
+  .game-status {
+    margin-bottom: 30px;
+  }
+  
+  .status-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #34495e;
+  }
+  
+  .player {
+    font-weight: bold;
+  }
+  
+  .winner .player {
+    color: #27ae60;
+  }
+  
+  .draw {
+    color: #e74c3c;
+  }
+  
+  /* Board styling */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 10px;
+    justify-content: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cell styling */
+  .cell {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border: none;
+    background: #ecf0f1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cell:hover:not(:disabled) {
+    background: #dfe6e9;
+    transform: scale(1.05);
+  }
+  
+  .cell.x {
+    color: #2980b9;
+  }
+  
+  .cell.o {
+    color: #e74c3c;
+  }
+  
+  .cell:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* Reset button styling */
+  .btn-reset {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    background: #3498db;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-reset:hover {
+    background: #2980b9;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .game-title {
+      font-size: 2rem;
+    }
+  
+    .status-text {
+      font-size: 1.2rem;
+    }
+  
+    .board {
+      grid-template-columns: repeat(3, 90px);
+      gap: 8px;
+      padding: 10px;
+    }
+  
+    .cell {
+      width: 90px;
+      height: 90px;
+      font-size: 2.5rem;
+    }
+  
+    .btn-reset {
+      font-size: 1rem;
+      padding: 8px 20px;
+    }
+  }
